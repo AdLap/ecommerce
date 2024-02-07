@@ -22,7 +22,6 @@
 		],
 		"baseUrl": "./src",
 		"paths": {
-			"@/*": ["*"],
 			"@/atoms/*": ["ui/atoms/*"],
 			"@/molecules/*": ["ui/molecules/*"],
 			"@/organisms/*": ["ui/organisms/*"],
