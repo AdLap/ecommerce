@@ -1,6 +1,8 @@
-export interface Product {
+export interface ProductItem {
+	id: number;
 	name: string;
 	description: string;
+	category: string;
 	price: number;
 	image: {
 		src: string;

@@ -20,8 +20,13 @@
 				"name": "next"
 			}
 		],
+		"baseUrl": "./src",
 		"paths": {
-			"@/*": ["./src/*"]
+			"@/atoms/*": ["ui/atoms/*"],
+			"@/molecules/*": ["ui/molecules/*"],
+			"@/organisms/*": ["ui/organisms/*"],
+			"@/types/*": ["ui/types/*"],
+			"@/utils/*": ["utils/*"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
