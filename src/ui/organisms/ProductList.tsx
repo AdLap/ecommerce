@@ -1,15 +1,15 @@
-import { ProductItemList } from "@/ui/molecules/ProductItem";
-import { type Product } from "@/ui/types";
+import { ProductListItem } from "@/molecules/ProductListItem";
+import { type ProductItem } from "@/types/interfaces";
 
 export interface ProductListProps {
-	products: Product[];
+	products: ProductItem[];
 }
 
 export const ProductList = ({ products }: ProductListProps) => {
 	return (
 		<ul className="flex flex-wrap justify-center gap-6" data-testid="products-list">
 			{products.map((product) => (
-				<ProductItemList key={product.name} {...product} />
+				<ProductListItem key={product.id} {...product} />
 			))}
 		</ul>
 	);

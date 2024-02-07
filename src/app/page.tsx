@@ -1,4 +1,4 @@
-import { ProductList } from "@/ui/molecules/ProductList";
+import { ProductList } from "@/organisms/ProductList";
 import { products } from "@/utils/products-list";
 
 export default function Home() {
