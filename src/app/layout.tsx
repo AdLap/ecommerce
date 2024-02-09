@@ -19,11 +19,19 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="pl">
-			<body className={inter.className}>
+			<body className={`${inter.className} min-h-screen`}>
 				<Header />
-				<main className="mx-auto min-h-screen w-full px-4 md:max-w-4xl lg:max-w-7xl">
-					{children}
-				</main>
+				<main className="mx-auto w-full px-4 md:max-w-4xl lg:max-w-7xl">{children}</main>
+				<footer className="py-8 text-center">
+					<p>
+						© {new Date().getFullYear()}{" "}
+						<a
+							href="https://github.com/AdLap"
+							target="_blank"
+							rel="noopener noreferrer"
+						>{`<AdLap />`}</a>
+					</p>
+				</footer>
 				<Analytics />
 				<SpeedInsights />
 			</body>
