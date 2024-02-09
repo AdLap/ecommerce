@@ -3,8 +3,14 @@ import Link from "next/link";
 
 export const Logo = () => {
 	return (
-		<Link className="h-full" href="/">
-			<Image src="/logo.png" alt="logo" width={100} height={100} />
+		<Link className="group h-full" href="/">
+			<Image
+				className="duration-100 ease-in group-hover:translate-x-3 group-hover:translate-y-3"
+				src="/logo.png"
+				alt="logo"
+				width={100}
+				height={100}
+			/>
 		</Link>
 	);
 };
