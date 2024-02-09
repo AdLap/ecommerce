@@ -1,5 +1,5 @@
-import { ProductListItemDescription } from "@/atoms/ProductListItemDescription";
-import { ProductListItemImage } from "@/atoms/ProductListItemImage";
+import { ProductListItemDescription } from "@/atoms/product/ProductListItemDescription";
+import { ProductListItemImage } from "@/atoms/product/ProductListItemImage";
 import { type ProductItem } from "@/types/interfaces";
 
 export const ProductListItem = (product: ProductItem) => {

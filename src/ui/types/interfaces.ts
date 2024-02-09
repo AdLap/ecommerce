@@ -9,3 +9,8 @@ export interface ProductItem {
 		alt: string;
 	};
 }
+
+export interface INavItem {
+	path: string;
+	name: string;
+}

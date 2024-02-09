@@ -1,4 +1,4 @@
-import { ProductListItem } from "@/molecules/ProductListItem";
+import { ProductListItem } from "@/molecules/product-items/ProductListItem";
 import { type ProductItem } from "@/types/interfaces";
 
 export interface ProductListProps {
