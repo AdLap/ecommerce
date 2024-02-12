@@ -20,13 +20,13 @@
 				"name": "next"
 			}
 		],
-		"baseUrl": "./src",
 		"paths": {
-			"@/atoms/*": ["ui/atoms/*"],
-			"@/molecules/*": ["ui/molecules/*"],
-			"@/organisms/*": ["ui/organisms/*"],
-			"@/types/*": ["ui/types/*"],
-			"@/utils/*": ["utils/*"]
+			"@/*": ["./src/*"],
+			"@/atoms/*": ["./src/ui/atoms/*"],
+			"@/molecules/*": ["./src/ui/molecules/*"],
+			"@/organisms/*": ["./src/ui/organisms/*"],
+			"@/types/*": ["./src/ui/types/*"],
+			"@/utils/*": ["./src/utils/*"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
