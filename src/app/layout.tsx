@@ -1,9 +1,10 @@
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css";
+import type { Metadata } from "next";
 import { Header } from "@/organisms/header/Header";
+import "./globals.css";
+import { Footer } from "@/ui/organisms/footer/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -21,17 +22,8 @@ export default function RootLayout({
 		<html lang="pl">
 			<body className={`${inter.className} min-h-screen`}>
 				<Header />
-				<main className="mx-auto w-full px-4 md:max-w-4xl lg:max-w-7xl">{children}</main>
-				<footer className="py-8 text-center">
-					<p>
-						© {new Date().getFullYear()}{" "}
-						<a
-							href="https://github.com/AdLap"
-							target="_blank"
-							rel="noopener noreferrer"
-						>{`<AdLap />`}</a>
-					</p>
-				</footer>
+				<main className="mx-auto w-full px-4 pt-32 md:max-w-4xl lg:max-w-7xl">{children}</main>
+				<Footer />
 				<Analytics />
 				<SpeedInsights />
 			</body>

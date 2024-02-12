@@ -3,7 +3,7 @@ import { products } from "@/utils/products-list";
 
 export default function Home() {
 	return (
-		<section className="pt-32">
+		<section>
 			<ProductList products={products} />
 		</section>
 	);
