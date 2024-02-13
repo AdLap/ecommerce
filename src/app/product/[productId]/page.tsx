@@ -9,12 +9,14 @@ export type ProductPageProps = {
 	searchParams: Record<string, string | string[]>;
 };
 
-export const generateStaticParams = async (): Promise<{productId: string}[]> => {
+export const generateStaticParams = async (): Promise<ProductPageProps["params"][]> => {
 	const products = await getAllProducts(1);
-	return products.map((product: ProductItem) => ({
-		productId: product.id,
-	})).slice(0, 3);
-}
+	return products
+		.map((product: ProductItem) => ({
+			productId: product.id,
+		}))
+		.slice(0, 3);
+};
 
 export default async function ProductPage({ params }: ProductPageProps) {
 	const product = await getProductById(params.productId);

@@ -28,3 +28,16 @@ export type FetchedProductItem = {
 	};
 	longDescription: string;
 };
+
+export type BasePageLayoutProps = {
+	children: React.ReactNode;
+};
+
+// export type BaseProductPageProps = {
+// 	params: {
+// 		productId: string;
+// 		category: string;
+// 		pageNumber: string;
+// 	};
+// 	searchParams: Record<string, string | string[]>;
+// };

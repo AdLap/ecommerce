@@ -1,11 +1,8 @@
 import { Suspense } from "react";
 import { ProductsList } from "@/ui/organisms/product/ProductsList";
+import { type BasePageLayoutProps } from "@/ui/types/types";
 
-export type ProductsLayoutProps = {
-	children: React.ReactNode;
-};
-
-export default async function ProductsLayout({ children }: ProductsLayoutProps) {
+export default async function ProductsLayout({ children }: BasePageLayoutProps) {
 	return (
 		<div className="mx-auto grid min-h-screen w-full max-w-7xl grid-cols-12 gap-x-8 pt-32">
 			<aside className="col-span-3 px-8 py-4">
