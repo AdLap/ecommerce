@@ -1,4 +1,5 @@
 import clsx from "clsx";
+import { notFound } from "next/navigation";
 import { getAllProducts } from "@/api/products";
 import { ProductListItem } from "@/molecules/product/ProductListItem";
 
@@ -19,11 +20,9 @@ export const ProductsList = async ({ page, isSidebar }: ProductsListProps) => {
 			)}
 			data-testid="products-list"
 		>
-			{products ? (
-				products.map((product) => <ProductListItem key={product.id} {...product} />)
-			) : (
-				<p>Brak produktów do wyśwetlenia</p>
-			)}
+			{products
+				? products.map((product) => <ProductListItem key={product.id} {...product} />)
+				: notFound()}
 		</ul>
 	);
 };
