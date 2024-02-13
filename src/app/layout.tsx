@@ -22,7 +22,7 @@ export default function RootLayout({
 		<html lang="pl">
 			<body className={`${inter.className} min-h-screen`}>
 				<Header />
-				<main className="mx-auto w-full px-4 pt-32 md:max-w-4xl lg:max-w-7xl">{children}</main>
+				<main className="mx-auto w-full px-4 md:max-w-4xl lg:max-w-7xl">{children}</main>
 				<Footer />
 				<Analytics />
 				<SpeedInsights />

@@ -1,3 +1,6 @@
+import { getProductById } from "@/api/products";
+import { ProductCardItem } from "@/ui/molecules/product/card/ProductCardItem";
+
 export interface ProductPageProps {
 	params: {
 		productId: string;
@@ -5,14 +8,13 @@ export interface ProductPageProps {
 	searchParams: Record<string, string | string[]>;
 }
 
-export default function ProductPage({ params, searchParams }: ProductPageProps) {
-	const query = searchParams.q?.toString() ?? "";
+export default async function ProductPage({ params }: ProductPageProps) {
+	const product = await getProductById(params.productId);
+
 	return (
-		<section>
-			<h1 className="text-4xl font-bold">Product</h1>
-			<p className="text-2xl">
-				{params.productId} - {query}
-			</p>
+		<section className="mx-auto max-w-3xl">
+			<h1 className="mb-4 text-4xl font-bold">{product?.name}</h1>
+			{product !== undefined ? <ProductCardItem {...product} /> : <p>Product not found</p>}
 		</section>
 	);
 }

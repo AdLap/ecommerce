@@ -1,10 +1,12 @@
-import { ProductList } from "@/organisms/product/ProductList";
-import { products } from "@/utils/products-list";
+import { Suspense } from "react";
+import { ProductsList } from "@/organisms/product/ProductsList";
 
-export default function ProductsPage() {
+export default async function ProductsPage() {
 	return (
 		<section>
-			<ProductList products={products} />
+			<Suspense fallback={<p>Loading...</p>}>
+				<ProductsList page={1} />
+			</Suspense>
 		</section>
 	);
 }
