@@ -1,9 +1,9 @@
 import { type ProductItem } from "@/types/types";
 import { priceFormatter } from "@/utils/price-formatter";
 
-export interface ProductListItemDescriptionProps {
+export type ProductListItemDescriptionProps = {
 	product: ProductItem;
-}
+};
 
 export const ProductListItemDescription = ({
 	product: { name, description, price, category },

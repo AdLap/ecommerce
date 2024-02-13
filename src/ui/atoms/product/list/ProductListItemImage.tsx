@@ -1,9 +1,9 @@
 import Image from "next/image";
 
-export interface ProductListItemImageProps {
+export type ProductListItemImageProps = {
 	src: string;
 	alt: string;
-}
+};
 
 export const ProductListItemImage = ({ src, alt }: ProductListItemImageProps) => {
 	return (
