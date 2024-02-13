@@ -7,7 +7,7 @@ export type ProductsLayoutProps = {
 
 export default async function ProductsLayout({ children }: ProductsLayoutProps) {
 	return (
-		<div className="mx-auto grid min-h-screen w-full max-w-7xl grid-cols-12 gap-x-8 bg-white">
+		<div className="mx-auto grid min-h-screen w-full max-w-7xl grid-cols-12 gap-x-8 bg-white pt-32">
 			<aside className="col-span-3 px-8 py-4 shadow-xl">
 				<h2 className="mb-4 text-xl font-bold">Polecane produkty</h2>
 				<Suspense fallback={<p>Ładowanie...</p>}>

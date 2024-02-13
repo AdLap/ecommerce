@@ -1,5 +1,6 @@
-import { ProductListItemDescription } from "@/atoms/product/ProductListItemDescription";
-import { ProductListItemImage } from "@/atoms/product/ProductListItemImage";
+import Link from "next/link";
+import { ProductListItemDescription } from "@/atoms/product/list/ProductListItemDescription";
+import { ProductListItemImage } from "@/atoms/product/list/ProductListItemImage";
 import { type ProductItem } from "@/types/types";
 
 export const ProductListItem = (product: ProductItem) => {
@@ -8,10 +9,10 @@ export const ProductListItem = (product: ProductItem) => {
 			className="flex flex-col rounded bg-gray-50 p-4 shadow-sm duration-100 ease-in hover:scale-105"
 			title={product.description}
 		>
-			<a href={`/product/${product.id}`} className="">
+			<Link href={`/product/${product.id}`} className="">
 				<ProductListItemImage {...product.image} />
 				<ProductListItemDescription product={product} />
-			</a>
+			</Link>
 		</li>
 	);
 };
