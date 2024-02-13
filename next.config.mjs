@@ -1,5 +1,16 @@
+import nextMdx from "@next/mdx";
+
 /** @type {import('next').NextConfig} */
-const nextConfig = {
+const withMDX = nextMdx({
+	extension: /\.mdx?$/,
+	options: {
+		// remarkPlugins: [],
+		// rehypePlugins: [],
+	},
+});
+
+const nextConfig = withMDX({
+	pageExtensions: ["ts", "tsx", "md", "mdx"],
 	images: {
 		remotePatterns: [
 			{
@@ -14,7 +25,8 @@ const nextConfig = {
 	},
 	experimental: {
 		typedRoutes: true,
+		mdxRs: true,
 	},
-};
+});
 
 export default nextConfig;
