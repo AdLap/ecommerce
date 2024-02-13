@@ -14,7 +14,10 @@ export const ActiveLink = ({ href, children }: ActiveLinkProps) => {
 	const isActive = pathname === href;
 
 	return (
-		<Link className={clsx({ underline: isActive })} href={{ pathname: href }}>
+		<Link
+			className={clsx("flex-grow text-center leading-[80px]", { underline: isActive })}
+			href={{ pathname: href }}
+		>
 			{children}
 		</Link>
 	);

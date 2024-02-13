@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { ProductsList } from "@/organisms/product/ProductsList";
 
-export default async function ProductsPage() {
+export default function ProductsPage() {
 	return (
 		<section>
 			<Suspense fallback={<p>Loading...</p>}>
