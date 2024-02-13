@@ -1,5 +1,5 @@
 import { Nav } from "@/molecules/nav/Nav";
-import { type INavItem } from "@/types/interfaces";
+import { type INavItem } from "@/types/types";
 import { Logo } from "@/atoms/logo/Logo";
 
 export const Header = () => {

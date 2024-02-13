@@ -1,4 +1,4 @@
-import { type ProductItem } from "@/types/interfaces";
+import { type ProductItem } from "@/types/types";
 import { priceFormatter } from "@/utils/price-formatter";
 
 export interface ProductListItemDescriptionProps {

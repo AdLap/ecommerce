@@ -1,4 +1,4 @@
-import type { INavItem } from "@/types/interfaces";
+import type { INavItem } from "@/types/types";
 import { ActiveLink } from "@/ui/atoms/link/ActiveLink";
 
 export interface NavItemProps {
