@@ -4,7 +4,8 @@ import { Logo } from "@/atoms/logo/Logo";
 
 export const Header = () => {
 	const routes: INavItem[] = [
-		{ path: "products", name: "Nie klikaj" },
+		{ path: "/", name: "Home" },
+		{ path: "products", name: "All" },
 		{ path: "polityka-prywatnosci", name: "..." },
 		{ path: "contact", name: "@" },
 	];
