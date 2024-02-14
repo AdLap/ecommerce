@@ -4,6 +4,7 @@ import { ProductsList } from "@/organisms/product/ProductsList";
 export default function ProductsPage() {
 	return (
 		<section>
+			<h1 className="mb-4 text-4xl font-bold">Ostatnio dodane</h1>
 			<Suspense fallback={<p>Loading...</p>}>
 				<ProductsList page={1} />
 			</Suspense>

@@ -10,9 +10,7 @@ export interface ActiveLinkProps {
 
 export const ActiveLink = ({ href, children }: ActiveLinkProps) => {
 	const pathname = usePathname();
-	const isActive = pathname === '/'
-		? pathname === href.slice(1)
-		: pathname.startsWith(href);
+	const isActive = pathname === "/" ? pathname === href.slice(1) : pathname.startsWith(href);
 
 	return (
 		<Link

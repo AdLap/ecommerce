@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { type Metadata } from "next";
+import { Suspense } from "react";
 import { getAllProducts, getProductById } from "@/api/products";
 import { ProductCardItem } from "@/ui/molecules/product/card/ProductCardItem";
 import { type ProductItem } from "@/ui/types/types";
@@ -32,9 +33,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
 	const product = await getProductById(params.productId);
 
 	return (
-		<section className="mx-auto max-w-3xl pt-32">
+		<section className="mx-auto max-w-4xl">
 			<h1 className="mb-4 text-4xl font-bold">{product?.name}</h1>
-			{product ? <ProductCardItem {...product} /> : notFound()}
+			<Suspense fallback={<div>loading...</div>}>
+				{product ? <ProductCardItem {...product} /> : notFound()}
+			</Suspense>
 		</section>
 	);
 }

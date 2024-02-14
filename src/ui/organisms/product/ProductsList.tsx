@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { notFound } from "next/navigation";
 import { getAllProducts } from "@/api/products";
-import { ProductListItem } from "@/molecules/product/ProductListItem";
+import { ProductListItem } from "@/ui/molecules/product/list/ProductListItem";
 
 export type ProductsListProps = {
 	isSidebar?: boolean;
