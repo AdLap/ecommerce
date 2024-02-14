@@ -8,7 +8,7 @@ export default async function ProductsLayout({ children }: BasePageLayoutProps) 
 			<aside className="col-span-3 px-8">
 				<h2 className="mb-4 text-xl font-bold">Polecane produkty</h2>
 				<Suspense fallback={<p>Ładowanie...</p>}>
-					<ProductsList page={3} isSidebar={true} />
+					<ProductsList productsNumber={5} page={3} isSidebar={true} />
 				</Suspense>
 			</aside>
 			<main className="col-span-9 px-8 text-neutral-900">{children}</main>

@@ -1,9 +1,7 @@
 import { notFound } from "next/navigation";
 import { type Metadata } from "next";
-import { Suspense } from "react";
-import { getAllProducts, getProductById } from "@/api/products";
+import { getProductById } from "@/api/products";
 import { ProductCardItem } from "@/ui/molecules/product/card/ProductCardItem";
-import { type ProductItem } from "@/ui/types/types";
 
 export type ProductPageProps = {
 	params: {
@@ -12,14 +10,14 @@ export type ProductPageProps = {
 	searchParams: Record<string, string | string[]>;
 };
 
-export const generateStaticParams = async (): Promise<ProductPageProps["params"][]> => {
-	const products = await getAllProducts(1);
-	return products
-		.map((product: ProductItem) => ({
-			productId: product.id,
-		}))
-		.slice(0, 3);
-};
+// export const generateStaticParams = async (): Promise<ProductPageProps["params"][]> => {
+// 	const products = await getAllProducts(10, 1);
+// 	return products
+// 		.map((product: ProductItem) => ({
+// 			productId: product.id,
+// 		}))
+// 		.slice(0, 3);
+// };
 
 export const generateMetadata = async ({ params }: ProductPageProps): Promise<Metadata> => {
 	const product = await getProductById(params.productId);
@@ -34,10 +32,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
 	return (
 		<section className="mx-auto max-w-4xl">
-			<h1 className="mb-4 text-4xl font-bold">{product?.name}</h1>
-			<Suspense fallback={<div>loading...</div>}>
+				<h1 className="mb-4 text-4xl font-bold">{product?.name}</h1>
 				{product ? <ProductCardItem {...product} /> : notFound()}
-			</Suspense>
 		</section>
 	);
 }

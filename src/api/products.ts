@@ -14,10 +14,11 @@ export const fetchedProductToProductItem = (product: FetchedProductItem): Produc
 	};
 };
 
-export const getAllProducts = async (page: number): Promise<ProductItem[]> => {
+export const getAllProducts = async (productsNumber: number, page: number): Promise<ProductItem[]> => {
 	try {
-		const take = 10;
-		const offset = 10 * (page - 1);
+		const take = Number(productsNumber);
+		const offset = take * (Number(page) - 1);
+		console.log({offset})
 		const response = await fetch(
 			`https://naszsklep-api.vercel.app/api/products?take=${take}&offset=${offset}`,
 		);
