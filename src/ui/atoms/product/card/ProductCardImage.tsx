@@ -7,13 +7,13 @@ export type ProductCardImageProps = {
 
 export const ProductCardImage = ({ src, alt }: ProductCardImageProps) => {
 	return (
-		<div className="h-[300px] col-start-1 row-start-1">
+		<div className="col-start-1 row-start-1 h-[300px]">
 			<Image
 				src={src}
 				alt={alt}
 				width={250}
 				height={300}
-				className="h-full w-full object-contain hover:scale-110 transition-transform duration-100 ease-in-out cursor-pointer"
+				className="h-full w-full cursor-pointer object-contain transition-transform duration-100 ease-in-out hover:scale-110"
 			/>
 		</div>
 	);

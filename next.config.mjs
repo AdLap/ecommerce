@@ -23,6 +23,11 @@ const nextConfig = withMDX({
 			},
 		],
 	},
+	logging: {
+		fetches: {
+			fullUrl: true,
+		},
+	},
 	experimental: {
 		typedRoutes: true,
 		mdxRs: true,
