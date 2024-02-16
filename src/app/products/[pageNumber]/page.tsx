@@ -12,7 +12,6 @@ export type ProductsPageProps = {
 export default async function ProductsPage({ params }: ProductsPageProps) {
 	const pageNumber = Number(params.pageNumber);
 	const productsOnPage = Number(params.productsOnPage) || 20;
-	console.log("productsOnPage", productsOnPage, typeof productsOnPage);
 
 	return (
 		<section>
@@ -24,3 +23,7 @@ export default async function ProductsPage({ params }: ProductsPageProps) {
 		</section>
 	);
 }
+
+export const generateStaticParams = async () => {
+	return [{ pageNumber: "1" }, { pageNumber: "2" }, { pageNumber: "3" }];
+};
