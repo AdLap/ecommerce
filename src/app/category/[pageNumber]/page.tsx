@@ -5,17 +5,6 @@ export type CategoryProductPageProps = {
 	};
 };
 
-export const generateStaticParams = async ({ params }: { params: { category: string } }) => {
-	switch (params.category) {
-		case "Toys":
-			return [{ pageNumber: "1" }];
-		case "Jewelery":
-			return [{ pageNumber: "1" }, { pageNumber: "2" }];
-		default:
-			return [];
-	}
-};
-
 export default function CategoryProductPage({ params }: CategoryProductPageProps) {
 	return (
 		<div>
@@ -27,3 +16,14 @@ export default function CategoryProductPage({ params }: CategoryProductPageProps
 		</div>
 	);
 }
+
+export const generateStaticParams = async ({ params }: { params: { category: string } }) => {
+	switch (params.category) {
+		case "Toys":
+			return [{ pageNumber: "1" }];
+		case "Jewelery":
+			return [{ pageNumber: "1" }, { pageNumber: "2" }];
+		default:
+			return [];
+	}
+};

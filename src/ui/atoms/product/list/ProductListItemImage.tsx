@@ -7,8 +7,14 @@ export type ProductListItemImageProps = {
 
 export const ProductListItemImage = ({ src, alt }: ProductListItemImageProps) => {
 	return (
-		<div className="">
-			<Image src={src} alt={alt} width={250} height={300} />
+		<div className="h-[300px]">
+			<Image
+				src={src}
+				alt={alt}
+				width={250}
+				height={300}
+				className="h-full w-full object-contain"
+			/>
 		</div>
 	);
 };
