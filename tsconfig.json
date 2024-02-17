@@ -22,6 +22,7 @@
 		],
 		"paths": {
 			"@/*": ["./src/*"],
+			"@/assets": ["./src/assets"],
 			"@/atoms/*": ["./src/ui/atoms/*"],
 			"@/molecules/*": ["./src/ui/molecules/*"],
 			"@/organisms/*": ["./src/ui/organisms/*"],
