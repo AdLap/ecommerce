@@ -1,7 +1,7 @@
-import clsx from "clsx";
-import { notFound } from "next/navigation";
-import { getAllProducts } from "@/api/products";
-import { ProductListItem } from "@/ui/molecules/product/list/ProductListItem";
+import clsx from 'clsx';
+import { notFound } from 'next/navigation';
+import { getAllProducts } from '@/api/products';
+import { ProductListItem } from '@/ui/molecules/product/list/ProductListItem';
 
 export type ProductsListProps = {
 	isSidebar?: boolean;
@@ -16,8 +16,8 @@ export const ProductsList = async ({ productsNumber, page, isSidebar }: Products
 		<ul
 			className={clsx(
 				isSidebar
-					? "flex flex-col gap-4"
-					: "grid justify-items-center gap-4 sm:grid-cols-2 lg:grid-cols-3",
+					? 'flex flex-col gap-4'
+					: 'grid justify-items-center gap-4 sm:grid-cols-2 lg:grid-cols-3',
 			)}
 			data-testid="products-list"
 		>

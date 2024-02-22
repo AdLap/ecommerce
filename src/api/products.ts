@@ -1,4 +1,4 @@
-import type { FetchedProductItem, ProductItem } from "@/types/types";
+import type { FetchedProductItem, ProductItem } from '@/types/types';
 
 export const fetchedProductToProductItem = (product: FetchedProductItem): ProductItem => {
 	return {
@@ -31,11 +31,11 @@ export const getAllProducts = async (
 		return products;
 	} catch (error) {
 		console.error(error);
-		throw new Error("Network response was not ok");
+		throw new Error('Network response was not ok');
 	}
 };
 
-export const getProductById = async (id: FetchedProductItem["id"]): Promise<ProductItem> => {
+export const getProductById = async (id: FetchedProductItem['id']): Promise<ProductItem> => {
 	try {
 		const response = await fetch(`https://naszsklep-api.vercel.app/api/products/${id}`);
 		const result = (await response.json()) as FetchedProductItem;
@@ -43,6 +43,6 @@ export const getProductById = async (id: FetchedProductItem["id"]): Promise<Prod
 		return fetchedProductToProductItem(result);
 	} catch (error) {
 		console.error(error);
-		throw new Error("Network response was not ok");
+		throw new Error('Network response was not ok');
 	}
 };

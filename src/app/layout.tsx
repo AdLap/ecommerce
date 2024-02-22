@@ -1,16 +1,16 @@
-import { Analytics } from "@vercel/analytics/react";
-import { SpeedInsights } from "@vercel/speed-insights/next";
-import { Inter } from "next/font/google";
-import type { Metadata } from "next";
-import { Header } from "@/organisms/header/Header";
-import "./globals.css";
-import { Footer } from "@/ui/organisms/footer/Footer";
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Inter } from 'next/font/google';
+import type { Metadata } from 'next';
+import { Header } from '@/organisms/header/Header';
+import './globals.css';
+import { Footer } from '@/ui/organisms/footer/Footer';
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-	title: "Podróż bez zwrotu",
-	description: "Niewyobrażalnie Niemożliwe",
+	title: 'Podróż bez zwrotu',
+	description: 'Niewyobrażalnie Niemożliwe',
 };
 
 export default function RootLayout({

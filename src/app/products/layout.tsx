@@ -1,6 +1,6 @@
-import { Suspense } from "react";
-import { ProductsList } from "@/ui/organisms/product/ProductsList";
-import { type BasePageLayoutProps } from "@/ui/types/types";
+import { Suspense } from 'react';
+import { ProductsList } from '@/ui/organisms/product/ProductsList';
+import { type BasePageLayoutProps } from '@/ui/types/types';
 
 export default async function ProductsLayout({ children }: BasePageLayoutProps) {
 	return (

@@ -1,6 +1,6 @@
 // import { ChevronLeft } from "lucide-react";
-import { ActiveLink } from "@/ui/atoms/link/ActiveLink";
-import { type FetchedProductItem } from "@/ui/types/types";
+import { ActiveLink } from '@/ui/atoms/link/ActiveLink';
+import { type FetchedProductItem } from '@/ui/types/types';
 
 export type PaginationProps = {
 	currentPage: number;

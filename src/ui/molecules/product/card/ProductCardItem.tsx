@@ -1,7 +1,7 @@
-import { Suspense } from "react";
-import { ProductCardDescription } from "@/ui/atoms/product/card/ProductCardDescription";
-import { ProductCardImage } from "@/ui/atoms/product/card/ProductCardImage";
-import type { ProductItem } from "@/ui/types/types";
+import { Suspense } from 'react';
+import { ProductCardDescription } from '@/ui/atoms/product/card/ProductCardDescription';
+import { ProductCardImage } from '@/ui/atoms/product/card/ProductCardImage';
+import type { ProductItem } from '@/ui/types/types';
 
 export const ProductCardItem = (product: ProductItem) => {
 	return (

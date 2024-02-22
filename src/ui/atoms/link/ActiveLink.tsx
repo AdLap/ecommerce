@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import clsx from "clsx";
-import { usePathname } from "next/navigation";
+import Link from 'next/link';
+import clsx from 'clsx';
+import { usePathname } from 'next/navigation';
 export interface ActiveLinkProps {
 	href: string;
 	isDisabled?: boolean;
@@ -11,11 +11,11 @@ export interface ActiveLinkProps {
 
 export const ActiveLink = ({ href, isDisabled = false, children }: ActiveLinkProps) => {
 	const pathname = usePathname();
-	const isActive = pathname === "/" ? pathname === href.slice(1) : pathname.startsWith(href);
+	const isActive = pathname === '/' ? pathname === href.slice(1) : pathname.startsWith(href);
 
 	return (
 		<Link
-			className={clsx("flex-grow text-center leading-[80px]", isDisabled && "pointer-events-none", {
+			className={clsx('flex-grow text-center leading-[80px]', isDisabled && 'pointer-events-none', {
 				underline: isActive,
 			})}
 			href={{ pathname: href }}

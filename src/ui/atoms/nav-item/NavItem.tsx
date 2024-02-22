@@ -1,5 +1,5 @@
-import type { INavItem } from "@/types/types";
-import { ActiveLink } from "@/ui/atoms/link/ActiveLink";
+import type { INavItem } from '@/types/types';
+import { ActiveLink } from '@/ui/atoms/link/ActiveLink';
 
 export type NavItemProps = {
 	route: INavItem;
