@@ -1,13 +1,13 @@
-import { Nav } from "@/molecules/nav/Nav";
-import { type INavItem } from "@/types/types";
-import { Logo } from "@/atoms/logo/Logo";
+import { Nav } from '@/molecules/nav/Nav';
+import { type INavItem } from '@/types/types';
+import { Logo } from '@/atoms/logo/Logo';
 
 export const Header = () => {
 	const routes: INavItem[] = [
-		{ path: "/", name: "Home" },
-		{ path: "products", name: "All" },
-		{ path: "polityka-prywatnosci", name: "..." },
-		{ path: "contact", name: "@" },
+		{ path: '/', name: 'Home' },
+		{ path: 'products', name: 'All' },
+		{ path: 'polityka-prywatnosci', name: '...' },
+		{ path: 'contact', name: '@' },
 	];
 
 	return (

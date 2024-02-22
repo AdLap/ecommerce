@@ -1,7 +1,7 @@
-import { notFound } from "next/navigation";
-import { type Metadata } from "next";
-import { getProductById } from "@/api/products";
-import { ProductCardItem } from "@/ui/molecules/product/card/ProductCardItem";
+import { notFound } from 'next/navigation';
+import { type Metadata } from 'next';
+import { getProductById } from '@/api/products';
+import { ProductCardItem } from '@/ui/molecules/product/card/ProductCardItem';
 
 export type ProductPageProps = {
 	params: {
@@ -13,8 +13,8 @@ export type ProductPageProps = {
 export const generateMetadata = async ({ params }: ProductPageProps): Promise<Metadata> => {
 	const product = await getProductById(params.productId);
 	return {
-		title: product?.name ?? "Produkt",
-		description: product?.description ?? "Super produkt",
+		title: product?.name ?? 'Produkt',
+		description: product?.description ?? 'Super produkt',
 	};
 };
 

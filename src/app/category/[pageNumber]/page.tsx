@@ -19,10 +19,10 @@ export default function CategoryProductPage({ params }: CategoryProductPageProps
 
 export const generateStaticParams = async ({ params }: { params: { category: string } }) => {
 	switch (params.category) {
-		case "Toys":
-			return [{ pageNumber: "1" }];
-		case "Jewelery":
-			return [{ pageNumber: "1" }, { pageNumber: "2" }];
+		case 'Toys':
+			return [{ pageNumber: '1' }];
+		case 'Jewelery':
+			return [{ pageNumber: '1' }, { pageNumber: '2' }];
 		default:
 			return [];
 	}

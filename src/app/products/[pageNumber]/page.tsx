@@ -1,6 +1,6 @@
-import { Suspense } from "react";
-import { ProductsList } from "@/organisms/product/ProductsList";
-import { Pagination } from "@/ui/organisms/pagination/Pagination";
+import { Suspense } from 'react';
+import { ProductsList } from '@/organisms/product/ProductsList';
+import { Pagination } from '@/ui/organisms/pagination/Pagination';
 
 export type ProductsPageProps = {
 	params: {
@@ -25,5 +25,5 @@ export default async function ProductsPage({ params }: ProductsPageProps) {
 }
 
 export const generateStaticParams = async () => {
-	return [{ pageNumber: "1" }, { pageNumber: "2" }, { pageNumber: "3" }];
+	return [{ pageNumber: '1' }, { pageNumber: '2' }, { pageNumber: '3' }];
 };

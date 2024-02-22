@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound } from 'next/navigation';
 
 export default async function StaticContentPage({ params }: { params: { filename: string } }) {
 	const StaticPage = await import(`./${params.filename}.mdx`).then(

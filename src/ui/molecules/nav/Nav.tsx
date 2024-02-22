@@ -1,5 +1,5 @@
-import { NavItem } from "@/atoms/nav-item/NavItem";
-import type { INavItem } from "@/types/types";
+import { NavItem } from '@/atoms/nav-item/NavItem';
+import type { INavItem } from '@/types/types';
 
 export type NavProps = {
 	routes: INavItem[];
