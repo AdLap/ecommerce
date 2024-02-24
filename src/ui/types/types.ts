@@ -4,8 +4,8 @@ export type ProductItem = {
 	description: string;
 	category: string;
 	price: number;
-	image: {
-		src: string;
+	image?: {
+		url: string;
 		alt: string;
 	};
 };
