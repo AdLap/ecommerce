@@ -1,17 +1,19 @@
 import clsx from 'clsx';
 import { notFound } from 'next/navigation';
-import { getProductsList } from '@/api/products';
 import { ProductListItem } from '@/ui/molecules/product/list/ProductListItem';
+import { type ProductItem } from '@/ui/types/types';
 
 export type ProductsListProps = {
+	products: ProductItem[];
 	isSidebar?: boolean;
-	productsNumber: number;
-	page: number;
+	productsNumber?: number;
+	page?: number;
 };
 
-export const ProductsList = async ({ /*productsNumber, page,*/ isSidebar }: ProductsListProps) => {
-	const products = await getProductsList();
-
+export const ProductsList = async ({
+	/*productsNumber, page,*/ products,
+	isSidebar,
+}: ProductsListProps) => {
 	return (
 		<ul
 			className={clsx(

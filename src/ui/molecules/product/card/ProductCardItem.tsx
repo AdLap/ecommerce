@@ -10,7 +10,7 @@ export const ProductCardItem = (product: ProductItem) => {
 			title={product.description}
 		>
 			<Suspense fallback={<p>Loading...</p>}>
-				<ProductCardImage {...product.image} />
+				{product.image && <ProductCardImage {...product.image} />}
 			</Suspense>
 			<ProductCardDescription product={product} />
 		</section>

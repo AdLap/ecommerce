@@ -1,18 +1,18 @@
 // import { ChevronLeft } from "lucide-react";
 import { ActiveLink } from '@/ui/atoms/link/ActiveLink';
-import { type FetchedProductItem } from '@/ui/types/types';
 
 export type PaginationProps = {
 	currentPage: number;
 	productsNumber: number;
 };
 
+// TODO: fix links, take products number from graphql
 export const Pagination = async ({ currentPage, productsNumber }: PaginationProps) => {
-	const take = -1;
+	// const take = -1;
 	const offset = productsNumber;
-	const response = await fetch(`https://naszsklep-api.vercel.app/api/products?take=${take}`);
-	const result = (await response.json()) as FetchedProductItem[];
-	const totalProductsNumber = result.length;
+	// const response = await fetch(`https://naszsklep-api.vercel.app/api/products?take=${take}`);
+	// const result = (await response.json()) as FetchedProductItem[];
+	const totalProductsNumber = 500;
 	const pagesNumber = Math.ceil(totalProductsNumber / offset);
 
 	return (

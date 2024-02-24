@@ -249,6 +249,39 @@ export type ReviewList = {
 
 export type SortDirection = 'ASC' | 'DESC';
 
+export type ProductGetByIdQueryVariables = Exact<{
+	id: Scalars['ID']['input'];
+}>;
+
+export type ProductGetByIdQuery = {
+	product?: {
+		id: string;
+		name: string;
+		description: string;
+		price: number;
+		categories: Array<{ name: string }>;
+		images: Array<{ url: string }>;
+	} | null;
+};
+
+export type ProductsGetByCategorySlugQueryVariables = Exact<{
+	slug: Scalars['String']['input'];
+}>;
+
+export type ProductsGetByCategorySlugQuery = {
+	category?: {
+		name: string;
+		products: Array<{
+			id: string;
+			name: string;
+			description: string;
+			price: number;
+			categories: Array<{ name: string }>;
+			images: Array<{ url: string }>;
+		}>;
+	} | null;
+};
+
 export type ProductsGetListQueryVariables = Exact<{ [key: string]: never }>;
 
 export type ProductsGetListQuery = {
@@ -282,6 +315,44 @@ export class TypedDocumentString<TResult, TVariables>
 	}
 }
 
+export const ProductGetByIdDocument = new TypedDocumentString(`
+    query ProductGetById($id: ID!) {
+  product(id: $id) {
+    id
+    name
+    description
+    categories {
+      name
+    }
+    images {
+      url
+    }
+    price
+  }
+}
+    `) as unknown as TypedDocumentString<ProductGetByIdQuery, ProductGetByIdQueryVariables>;
+export const ProductsGetByCategorySlugDocument = new TypedDocumentString(`
+    query ProductsGetByCategorySlug($slug: String!) {
+  category(slug: $slug) {
+    name
+    products {
+      id
+      name
+      description
+      categories {
+        name
+      }
+      images {
+        url
+      }
+      price
+    }
+  }
+}
+    `) as unknown as TypedDocumentString<
+	ProductsGetByCategorySlugQuery,
+	ProductsGetByCategorySlugQueryVariables
+>;
 export const ProductsGetListDocument = new TypedDocumentString(`
     query ProductsGetList {
   products(take: 10) {
