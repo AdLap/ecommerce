@@ -28,7 +28,7 @@ export const generateMetadata = async ({ params }: ProductPageProps): Promise<Me
 	if (!product) return notFound();
 
 	return {
-		title: product.name as string,
-		description: product.description as string,
+		title: product.name,
+		description: product.description,
 	};
 };
