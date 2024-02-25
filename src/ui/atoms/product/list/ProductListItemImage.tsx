@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import NextImage from 'next/image';
 
 export type ProductListItemImageProps = {
 	url: string;
@@ -8,7 +8,7 @@ export type ProductListItemImageProps = {
 export const ProductListItemImage = ({ url, alt }: ProductListItemImageProps) => {
 	return (
 		<div className="h-[300px]">
-			<Image
+			<NextImage
 				src={url}
 				alt={alt}
 				width={250}
