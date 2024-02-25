@@ -25,10 +25,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
 export const generateMetadata = async ({ params }: ProductPageProps): Promise<Metadata> => {
 	const product = await getProductById(params.productId);
-	if (!product) return notFound();
 
 	return {
-		title: product.name,
-		description: product.description,
+		title: product?.name || 'Super produkt',
+		description: product?.description || 'Opis super produktu',
 	};
 };
