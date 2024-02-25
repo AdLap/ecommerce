@@ -1,10 +1,10 @@
 import clsx from 'clsx';
 import { notFound } from 'next/navigation';
 import { ProductListItem } from '@/ui/molecules/product/list/ProductListItem';
-import { type ProductItem } from '@/ui/types/types';
+import { type ProductListItemFragment } from '@/gql/graphql';
 
 export type ProductsListProps = {
-	products: ProductItem[];
+	products: ProductListItemFragment[];
 	isSidebar?: boolean;
 	productsNumber?: number;
 	page?: number;
