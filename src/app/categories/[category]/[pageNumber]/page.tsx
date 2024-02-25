@@ -21,7 +21,7 @@ export default async function CategoryProductPage({ params }: CategoryProductPag
 			<h1 className="mb-4 text-4xl font-bold">Wszystkie produkty</h1>
 			<Suspense fallback={<p>Loading...</p>}>
 				<ProductsList products={productsList} productsNumber={productsOnPage} page={pageNumber} />
-				<Pagination currentPage={pageNumber} productsNumber={productsOnPage} />
+				<Pagination location={`categories/${params.category}`} currentPage={pageNumber} productsNumber={productsOnPage} />
 			</Suspense>
 		</section>
 	);
@@ -30,10 +30,12 @@ export default async function CategoryProductPage({ params }: CategoryProductPag
 export const generateStaticParams = async ({ params }: { params: { category: string } }) => {
 	switch (params.category) {
 		case 'Accessories':
-			return [{ pageNumber: '1' }];
-		case 'T-shirts':
 			return [{ pageNumber: '1' }, { pageNumber: '2' }];
+		case 'T-shirts':
+			return [{ pageNumber: '1' }, { pageNumber: '2' }, { pageNumber: '3' }];
+			case 'Hoodies':
+				return [{ pageNumber: '1' }, { pageNumber: '2' }];
 		default:
-			return [];
+			return [{ pageNumber: '1'}];
 	}
 };

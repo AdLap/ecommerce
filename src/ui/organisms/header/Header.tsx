@@ -5,12 +5,12 @@ import { Logo } from '@/atoms/logo/Logo';
 export const Header = () => {
 	const routes: INavItem[] = [
 		{ path: '/', name: 'Home' },
-		{ path: 'products', name: 'All' },
-		{ path: 'categories/t-shirts/1', name: 'T-Shirts' },
-		{ path: 'categories/hoodies/1', name: 'Bluzy' },
-		{ path: 'categories/accessories/1', name: 'Akcesoria' },
-		{ path: 'polityka-prywatnosci', name: '...' },
-		{ path: 'contact', name: '@' },
+		{ path: '/products/1', name: 'All' },
+		{ path: '/categories/t-shirts/1', name: 'T-Shirts' },
+		{ path: '/categories/hoodies/1', name: 'Bluzy' },
+		{ path: '/categories/accessories/1', name: 'Akcesoria' },
+		{ path: '/polityka-prywatnosci', name: '...' },
+		{ path: '/contact', name: '@' },
 	];
 
 	return (

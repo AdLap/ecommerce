@@ -4,7 +4,6 @@ import { ProductListItemImage } from '@/atoms/product/list/ProductListItemImage'
 import { type ProductListItemFragment } from '@/gql/graphql';
 
 export const ProductListItem = (product: ProductListItemFragment) => {
-	console.log(product);
 	return (
 		<li
 			className="flex flex-col rounded bg-gray-50 shadow-sm duration-100 ease-in hover:scale-105"
