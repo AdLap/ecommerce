@@ -1,15 +1,15 @@
 import Image from 'next/image';
 
 export type ProductCardImageProps = {
-	src: string;
+	url: string;
 	alt: string;
 };
 
-export const ProductCardImage = ({ src, alt }: ProductCardImageProps) => {
+export const ProductCardImage = ({ url, alt }: ProductCardImageProps) => {
 	return (
 		<div className="col-start-1 row-start-1 h-[300px]">
 			<Image
-				src={src}
+				src={url}
 				alt={alt}
 				width={250}
 				height={300}

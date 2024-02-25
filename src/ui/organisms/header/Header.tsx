@@ -6,6 +6,9 @@ export const Header = () => {
 	const routes: INavItem[] = [
 		{ path: '/', name: 'Home' },
 		{ path: 'products', name: 'All' },
+		{ path: 'category/t-shirts/1', name: 'T-Shirts' },
+		{ path: 'category/hoodies/1', name: 'Bluzy' },
+		{ path: 'category/accessories/1', name: 'Akcesoria' },
 		{ path: 'polityka-prywatnosci', name: '...' },
 		{ path: 'contact', name: '@' },
 	];

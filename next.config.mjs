@@ -21,6 +21,10 @@ const nextConfig = withMDX({
 				protocol: 'https',
 				hostname: 'naszsklep-api.vercel.app',
 			},
+			{
+				protocol: 'https',
+				hostname: 'static-ourstore.hyperfunctor.com',
+			},
 		],
 	},
 	logging: {

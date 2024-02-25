@@ -10,6 +10,19 @@ export type ProductPageProps = {
 	searchParams: Record<string, string | string[]>;
 };
 
+export default async function ProductPage({ params }: ProductPageProps) {
+	const product = await getProductById(params.productId);
+
+	if (!product) return notFound();
+
+	return (
+		<section className="mx-auto max-w-4xl">
+			<h1 className="mb-4 text-4xl font-bold">{product.name}</h1>
+			<ProductCardItem {...product} />
+		</section>
+	);
+}
+
 export const generateMetadata = async ({ params }: ProductPageProps): Promise<Metadata> => {
 	const product = await getProductById(params.productId);
 	return {
@@ -17,14 +30,3 @@ export const generateMetadata = async ({ params }: ProductPageProps): Promise<Me
 		description: product?.description ?? 'Super produkt',
 	};
 };
-
-export default async function ProductPage({ params }: ProductPageProps) {
-	const product = await getProductById(params.productId);
-
-	return (
-		<section className="mx-auto max-w-4xl">
-			<h1 className="mb-4 text-4xl font-bold">{product?.name}</h1>
-			{product ? <ProductCardItem {...product} /> : notFound()}
-		</section>
-	);
-}
