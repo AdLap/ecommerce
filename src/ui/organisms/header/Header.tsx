@@ -9,6 +9,9 @@ export const Header = () => {
 		{ path: '/categories/t-shirts/1', name: 'T-Shirts' },
 		{ path: '/categories/hoodies/1', name: 'Bluzy' },
 		{ path: '/categories/accessories/1', name: 'Akcesoria' },
+		{ path: '/collections/summer-vibes/1', name: 'Summer' },
+		{ path: '/collections/new-arrivals/1', name: 'New' },
+		{ path: '/collections/elegant-extras/1', name: 'Elegant' },
 		{ path: '/polityka-prywatnosci', name: '...' },
 		{ path: '/contact', name: '@' },
 	];

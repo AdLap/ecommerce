@@ -20,7 +20,11 @@ export default async function ProductsPage({ params }: ProductsPageProps) {
 			<h1 className="mb-4 text-4xl font-bold">Wszystkie produkty</h1>
 			<Suspense fallback={<p>Loading...</p>}>
 				<ProductsList products={productsList} productsNumber={productsOnPage} page={pageNumber} />
-				<Pagination location={`products`} currentPage={pageNumber} productsNumber={productsOnPage} />
+				<Pagination
+					location={`products`}
+					currentPage={pageNumber}
+					productsNumber={productsOnPage}
+				/>
 			</Suspense>
 		</section>
 	);

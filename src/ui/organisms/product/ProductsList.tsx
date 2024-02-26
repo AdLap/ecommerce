@@ -6,8 +6,8 @@ import { type ProductListItemFragment } from '@/gql/graphql';
 export type ProductsListProps = {
 	products: ProductListItemFragment[];
 	isSidebar?: boolean;
-	productsNumber?: number;
-	page?: number;
+	// productsNumber?: number;
+	// page?: number;
 };
 
 export const ProductsList = async ({

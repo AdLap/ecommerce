@@ -10,5 +10,3 @@ export default function HomePage() {
 		</section>
 	);
 }
-
-// min-h-[calc(100vh_-_168px)]

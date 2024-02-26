@@ -2,6 +2,7 @@ import { executeGraphQLQuery } from '@/api/qraphqlApi';
 import {
 	ProductGetByIdDocument,
 	ProductsGetByCategorySlugDocument,
+	ProductsGetByCollectionSlugDocument,
 	ProductsGetListDocument,
 } from '@/gql/graphql';
 
@@ -22,4 +23,11 @@ export const getProductsByCategory = async (slug: string) => {
 	if (!response.category) throw new Error('Category not found');
 
 	return response.category.products;
+};
+
+export const getProductsByCollection = async (slug: string) => {
+	const response = await executeGraphQLQuery(ProductsGetByCollectionSlugDocument, { slug });
+	if (!response.collection) throw new Error('Collection not found');
+
+	return response.collection.products;
 };

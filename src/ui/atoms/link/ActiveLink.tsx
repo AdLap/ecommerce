@@ -10,7 +10,12 @@ export interface ActiveLinkProps {
 	children: React.ReactNode;
 }
 
-export const ActiveLink = ({ href, exact = true, isDisabled = false, children }: ActiveLinkProps) => {
+export const ActiveLink = ({
+	href,
+	exact = true,
+	isDisabled = false,
+	children,
+}: ActiveLinkProps) => {
 	const pathname = usePathname();
 	const isActive = exact
 		? pathname === href
