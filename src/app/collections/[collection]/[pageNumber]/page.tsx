@@ -11,7 +11,7 @@ export type CollectionsPageProps = {
 	};
 };
 
-export default async function CollectionsPage({
+export default async function CollectionPage({
 	params: { collection, pageNumber, productsOnPage },
 }: CollectionsPageProps) {
 	const productsList = await getProductsByCollection(collection);
