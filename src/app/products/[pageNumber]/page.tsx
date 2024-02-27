@@ -1,26 +1,26 @@
 import { Suspense } from 'react';
-import { ProductsList } from '@/organisms/product/ProductsList';
+import { ProductsList } from '@/organisms/products/list/ProductsList';
 import { Pagination } from '@/ui/organisms/pagination/Pagination';
-import { getProductsList } from '@/api/products';
+import { type BasePageProductProps } from '@/ui/types/types';
 
-export type ProductsPageProps = {
-	params: {
-		pageNumber: string;
-		productsOnPage: string;
-	};
-};
+export type ProductsPageProps = {} & BasePageProductProps;
 
-export default async function ProductsPage({ params }: ProductsPageProps) {
-	const pageNumber = Number(params.pageNumber);
-	const productsOnPage = Number(params.productsOnPage) || 20;
-	const productsList = await getProductsList();
+export default function ProductsPage({
+	params: { pageNumber, productsOnPage },
+}: ProductsPageProps) {
+	const currentPage = pageNumber;
+	const productsOnPageNumber = Number(productsOnPage) || 2;
 
 	return (
 		<section>
 			<h1 className="mb-4 text-4xl font-bold">Wszystkie produkty</h1>
 			<Suspense fallback={<p>Loading...</p>}>
-				<ProductsList products={productsList} productsNumber={productsOnPage} page={pageNumber} />
-				<Pagination currentPage={pageNumber} productsNumber={productsOnPage} />
+				<ProductsList productsOnPage={productsOnPageNumber} currentPage={currentPage} />
+				<Pagination
+					location={`products`}
+					currentPage={currentPage}
+					productsOnPage={productsOnPageNumber}
+				/>
 			</Suspense>
 		</section>
 	);

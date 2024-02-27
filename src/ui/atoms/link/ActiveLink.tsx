@@ -5,13 +5,23 @@ import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
 export interface ActiveLinkProps {
 	href: string;
+	exact?: boolean;
 	isDisabled?: boolean;
 	children: React.ReactNode;
 }
 
-export const ActiveLink = ({ href, isDisabled = false, children }: ActiveLinkProps) => {
+export const ActiveLink = ({
+	href,
+	exact = true,
+	isDisabled = false,
+	children,
+}: ActiveLinkProps) => {
 	const pathname = usePathname();
-	const isActive = pathname === '/' ? pathname === href.slice(1) : pathname.startsWith(href);
+	const isActive = exact
+		? pathname === href
+		: href === '/'
+			? pathname === href
+			: pathname.startsWith(href.slice(0, href.lastIndexOf('/')));
 
 	return (
 		<Link

@@ -6,7 +6,7 @@ import { Header } from '@/organisms/header/Header';
 import './globals.css';
 import { Footer } from '@/ui/organisms/footer/Footer';
 
-const inter = Inter({ 
+const inter = Inter({
 	subsets: ['latin', 'latin-ext'],
 	variable: '--font-inter',
 	display: 'swap',

@@ -5,5 +5,5 @@ export default function CategotyProductLayout({ children }: BasePageLayoutProps)
 }
 
 export const generateStaticParams = async () => {
-	return [{ category: 'Jewelery' }, { category: 'Toys' }];
+	return [{ category: 'Accessories' }, { category: 'T-shirts' }, { category: 'Hoodies' }];
 };
