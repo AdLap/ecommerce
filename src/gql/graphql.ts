@@ -315,7 +315,10 @@ export type ProductsGetByCollectionSlugQuery = {
 	} | null;
 };
 
-export type ProductsGetListQueryVariables = Exact<{ [key: string]: never }>;
+export type ProductsGetListQueryVariables = Exact<{
+	take?: InputMaybe<Scalars['Int']['input']>;
+	skip?: InputMaybe<Scalars['Int']['input']>;
+}>;
 
 export type ProductsGetListQuery = {
 	products: {
@@ -327,6 +330,7 @@ export type ProductsGetListQuery = {
 			categories: Array<{ name: string }>;
 			images: Array<{ url: string }>;
 		}>;
+		meta: { total: number; count: number };
 	};
 };
 
@@ -443,10 +447,14 @@ export const ProductsGetByCollectionSlugDocument = new TypedDocumentString(`
 	ProductsGetByCollectionSlugQueryVariables
 >;
 export const ProductsGetListDocument = new TypedDocumentString(`
-    query ProductsGetList {
-  products(take: 10) {
+    query ProductsGetList($take: Int, $skip: Int) {
+  products(take: $take, skip: $skip) {
     data {
       ...ProductListItem
+    }
+    meta {
+      total
+      count
     }
   }
 }

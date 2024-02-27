@@ -6,3 +6,10 @@ export type INavItem = {
 export type BasePageLayoutProps = {
 	children: React.ReactNode;
 };
+
+export type BasePageProductProps = {
+	params: {
+		pageNumber: string;
+		productsOnPage: string;
+	};
+};

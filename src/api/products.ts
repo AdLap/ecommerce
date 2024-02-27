@@ -6,8 +6,13 @@ import {
 	ProductsGetListDocument,
 } from '@/gql/graphql';
 
-export const getProductsList = async () => {
+export const getProductTotalNumber = async () => {
 	const response = await executeGraphQLQuery(ProductsGetListDocument, {});
+
+	return response.products.meta;
+};
+export const getProductsList = async (take: number = 2, skip: number = 0) => {
+	const response = await executeGraphQLQuery(ProductsGetListDocument, { take, skip });
 
 	return response.products.data;
 };
@@ -31,3 +36,4 @@ export const getProductsByCollection = async (slug: string) => {
 
 	return response.collection.products;
 };
+export const getRelatedProductsList = async () => {};

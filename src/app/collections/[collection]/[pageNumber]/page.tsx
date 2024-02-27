@@ -1,32 +1,28 @@
 import { Suspense } from 'react';
 import { Pagination } from '@/ui/organisms/pagination/Pagination';
-import { ProductsList } from '@/ui/organisms/product/ProductsList';
-import { getProductsByCollection } from '@/api/products';
+import { ProductsList } from '@/ui/organisms/products/list/ProductsList';
+import { type BasePageProductProps } from '@/ui/types/types';
 
 export type CollectionsPageProps = {
 	params: {
 		collection: string;
-		pageNumber: string;
-		productsOnPage: string;
 	};
-};
+} & BasePageProductProps;
 
 export default async function CollectionPage({
 	params: { collection, pageNumber, productsOnPage },
 }: CollectionsPageProps) {
-	const productsList = await getProductsByCollection(collection);
-	console.log(productsList);
+	const productsOnPageNumber = Number(productsOnPage) || 2;
+
 	return (
 		<section>
 			<h1 className="mb-4 text-4xl font-bold">Kolekcja {collection}</h1>
 			<Suspense fallback={<p>Loading...</p>}>
-				<ProductsList
-					products={productsList} /*productsNumber={productsOnPage} page={pageNumber}*/
-				/>
+				<ProductsList productsOnPage={productsOnPage} currentPage={pageNumber} />
 				<Pagination
 					location={`collections/${collection}`}
 					currentPage={Number(pageNumber)}
-					productsNumber={Number(productsOnPage) || 20}
+					productsOnPage={productsOnPageNumber}
 				/>
 			</Suspense>
 		</section>

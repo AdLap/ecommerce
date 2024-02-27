@@ -1,19 +1,21 @@
 import clsx from 'clsx';
 import { notFound } from 'next/navigation';
 import { ProductListItem } from '@/ui/molecules/product/list/ProductListItem';
-import { type ProductListItemFragment } from '@/gql/graphql';
+import { getProductsList } from '@/api/products';
 
 export type ProductsListProps = {
-	products: ProductListItemFragment[];
 	isSidebar?: boolean;
-	// productsNumber?: number;
-	// page?: number;
+	productsOnPage: string | number;
+	currentPage: string | number;
 };
 
 export const ProductsList = async ({
-	/*productsNumber, page,*/ products,
+	productsOnPage = 1,
+	currentPage = 0,
 	isSidebar,
 }: ProductsListProps) => {
+	const skip = Number(productsOnPage) * Number(currentPage);
+	const productsList = await getProductsList(Number(productsOnPage), skip);
 	return (
 		<ul
 			className={clsx(
@@ -23,8 +25,8 @@ export const ProductsList = async ({
 			)}
 			data-testid="products-list"
 		>
-			{products
-				? products.map((product) => <ProductListItem key={product.id} {...product} />)
+			{productsList
+				? productsList.map((product) => <ProductListItem key={product.id} {...product} />)
 				: notFound()}
 		</ul>
 	);
