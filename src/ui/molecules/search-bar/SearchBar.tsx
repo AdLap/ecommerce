@@ -5,6 +5,7 @@ import { useCallback, useEffect, useState } from "react"
 export const SearchBar = () => {
   const [searchValue, setSearchValue] = useState('');
   const [timeStamp, setTimeStamp] = useState(0);
+  const timeout = 500
   const router = useRouter();
 
   const executeSearch = useCallback((query: string) => {
@@ -20,8 +21,8 @@ export const SearchBar = () => {
 
   useEffect(() => {
     const searchTimeOut = setTimeout(() => {
-      if (timeStamp <= timeStamp + 1000) executeSearch(searchValue)
-    }, 1000)
+      if (timeStamp <= timeStamp + timeout) executeSearch(searchValue)
+    }, timeout)
 
     return () => clearTimeout(searchTimeOut)
   }, [executeSearch, searchValue, timeStamp])
