@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import Link from "next/link";
 import { searchProducts } from "@/api/products";
 
 export type SearchPageProps = {
@@ -8,13 +9,19 @@ export type SearchPageProps = {
 export default async function SearchPage({ searchParams: { query } }: SearchPageProps) {
   if (!query) return notFound();
 
-  const products = await searchProducts(query);
+  const productsList = await searchProducts(query);
   return (
     <>
-      <h2>Search Page</h2>
-      {products && products.map(product => (
-        <p key={product.id}>{product.name}</p>
-      ))}
+      <h1 className="mb-4 text-4xl font-bold">Znalezione produkty</h1>
+      <ul>
+        {productsList.map((product) => (
+          <li key={product.id}>
+            <Link href={`/product/${product.id}`} key={product.id}>
+              {product.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </>
   )
 }
