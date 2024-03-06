@@ -11,8 +11,8 @@ export const Header = () => {
 		{ path: '/categories/hoodies/1', name: 'Bluzy' },
 		{ path: '/categories/accessories/1', name: 'Akcesoria' },
 		{ path: '/collections', name: 'Kolekcje' },
-		{ path: '/polityka-prywatnosci', name: '...' },
-		{ path: '/contact', name: '@' },
+		// { path: '/polityka-prywatnosci', name: '...' },
+		// { path: '/cart', name: '@' },
 	];
 
 	return (

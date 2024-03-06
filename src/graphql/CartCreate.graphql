@@ -1,0 +1,17 @@
+# mutation CartCreate($productId: String!, $quantity: Int!) {
+# 	cartFindOrCreate(input: { items: { productId: $productId, quantity: $quantity } }) {
+# 		id
+# 	}
+# }
+
+# mutation CartCreate($productId: String!) {
+# 	cartFindOrCreate(input: { items: { productId: $productId } }) {
+# 		id
+# 	}
+# }
+
+mutation CartCreate($id: ID!) {
+	cartFindOrCreate(id: $id, input: {}) {
+		id
+	}
+}
