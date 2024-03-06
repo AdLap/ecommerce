@@ -12,7 +12,7 @@ export const getProductTotalNumber = async () => {
 
 	return response.products.meta;
 };
-export const getProductsList = async (take: number = 2, skip: number = 0) => {
+export const getProductsList = async (take: number = 5, skip: number = 0) => {
 	const response = await executeGraphQL({
 		query: ProductsGetListDocument,
 		variables: { take, skip },
