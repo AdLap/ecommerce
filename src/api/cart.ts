@@ -14,6 +14,7 @@ export const getOrCreateCart = async () => {
 			query: CartGetByIdDocument,
 			variables: { id: cartId },
 			next: { tags: ['cart'] },
+			cache: 'no-store',
 		});
 		if (cart) return cart;
 	}
@@ -23,6 +24,8 @@ export const getOrCreateCart = async () => {
 		variables: {
 			id: '',
 		},
+		next: { tags: ['cart'] },
+		cache: 'no-store',
 	});
 	if (!newCart) throw new Error('Failed to create cart');
 
@@ -45,6 +48,7 @@ export const getCartFromCookies = async () => {
 		query: CartGetByIdDocument,
 		variables: { id: cartId },
 		next: { tags: ['cart'] },
+		cache: 'no-store',
 	});
 
 	return cart;
@@ -66,5 +70,6 @@ export const addProductToCart = async (cartId: string, productId: string) => {
 			quantity: 1,
 		},
 		next: { tags: ['cart'] },
+		cache: 'no-store',
 	});
 };

@@ -94,6 +94,7 @@ export type MutationCartChangeItemQuantityArgs = {
 
 export type MutationCartCompleteArgs = {
 	cartId: Scalars['ID']['input'];
+	userEmail: Scalars['String']['input'];
 };
 
 export type MutationCartFindOrCreateArgs = {

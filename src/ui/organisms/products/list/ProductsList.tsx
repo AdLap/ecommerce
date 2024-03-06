@@ -10,8 +10,8 @@ export type ProductsListProps = {
 };
 
 export const ProductsList = async ({
-	productsOnPage,
-	currentPage,
+	productsOnPage = 4,
+	currentPage = 1,
 	isSidebar,
 }: ProductsListProps) => {
 	const skip = Number(productsOnPage) * Number(currentPage);
