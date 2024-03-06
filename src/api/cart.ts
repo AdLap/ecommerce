@@ -51,6 +51,8 @@ export const getCartFromCookies = async () => {
 		cache: 'no-store',
 	});
 
+	if (!cart) return;
+
 	return cart;
 };
 

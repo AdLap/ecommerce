@@ -1,8 +1,8 @@
 'use server';
 
 import { revalidateTag } from 'next/cache';
-import { executeGraphQL } from '@/api/qraphqlApi';
 import { CartRemoveProductDocument, CartSetProductQuantityDocument } from '@/gql/graphql';
+import { executeGraphQL } from '@/api/qraphqlApi';
 
 export const changeItemQuantity = (cartId: string, productId: string, quantity: number) => {
 	if (quantity < 1) {

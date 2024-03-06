@@ -58,7 +58,7 @@ export const getProductsByCollection = async (slug: string) => {
 	return response.collection.products;
 };
 
-export const getRelatedProductsList = async () => { };
+export const getRelatedProductsList = async () => {};
 
 export const searchProducts = async (query: string) => {
 	const response = await executeGraphQL({
