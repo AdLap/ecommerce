@@ -1,8 +1,8 @@
-import { executeGraphQLQuery } from '@/api/qraphqlApi';
+import { executeGraphQL } from '@/api/qraphqlApi';
 import { CollectionsGetListDocument } from '@/gql/graphql';
 
 export const getCollectionsList = async () => {
-	const response = await executeGraphQLQuery(CollectionsGetListDocument, {});
+	const response = await executeGraphQL({ query: CollectionsGetListDocument, variables: {} });
 	if (!response.collections) throw new Error('Collections not found');
 
 	return response.collections.data;
