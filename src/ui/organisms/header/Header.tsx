@@ -6,10 +6,10 @@ import { SearchBar } from '@/ui/molecules/search-bar/SearchBar';
 export const Header = () => {
 	const routes: INavItem[] = [
 		{ path: '/', name: 'Home' },
-		{ path: '/products/1', name: 'All' },
-		{ path: '/categories/t-shirts/1', name: 'T-Shirts' },
-		{ path: '/categories/hoodies/1', name: 'Bluzy' },
-		{ path: '/categories/accessories/1', name: 'Akcesoria' },
+		{ path: '/products', name: 'All' },
+		{ path: '/categories/t-shirts', name: 'T-Shirts' },
+		{ path: '/categories/hoodies', name: 'Bluzy' },
+		{ path: '/categories/accessories', name: 'Akcesoria' },
 		{ path: '/collections', name: 'Kolekcje' },
 		// { path: '/polityka-prywatnosci', name: '...' },
 		// { path: '/cart', name: '@' },
