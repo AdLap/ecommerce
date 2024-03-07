@@ -19,11 +19,15 @@ export const getOrCreateCart = async () => {
 		if (cart) return cart;
 	}
 
+	const newCart = await createCart();
+
+	return newCart;
+};
+
+export const createCart = async () => {
 	const { cartFindOrCreate: newCart } = await executeGraphQL({
 		query: CartCreateDocument,
-		variables: {
-			id: '',
-		},
+		variables: {},
 		next: { tags: ['cart'] },
 		cache: 'no-store',
 	});
@@ -36,9 +40,9 @@ export const getOrCreateCart = async () => {
 		sameSite: 'lax',
 		secure: true,
 	});
-	console.log('newCart::', newCart);
+
 	return newCart;
-};
+}
 
 export const getCartFromCookies = async () => {
 	const cartId = cookies().get('cartId')?.value;
