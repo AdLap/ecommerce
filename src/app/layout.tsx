@@ -3,8 +3,8 @@ import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Inter } from 'next/font/google';
 import type { Metadata } from 'next';
 import { Header } from '@/organisms/header/Header';
-import './globals.css';
 import { Footer } from '@/ui/organisms/footer/Footer';
+import './globals.css';
 
 const inter = Inter({
 	subsets: ['latin', 'latin-ext'],
@@ -19,8 +19,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
 	children,
+	modal,
 }: Readonly<{
 	children: React.ReactNode;
+	modal: React.ReactNode;
 }>) {
 	return (
 		<html lang="pl">
@@ -30,6 +32,7 @@ export default function RootLayout({
 					{children}
 				</main>
 				<Footer />
+				{modal}
 				<Analytics />
 				<SpeedInsights />
 			</body>
