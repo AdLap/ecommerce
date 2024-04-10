@@ -1,3 +1,4 @@
+import { ClerkProvider } from '@clerk/nextjs';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Inter } from 'next/font/google';
@@ -25,17 +26,19 @@ export default function RootLayout({
 	modal: React.ReactNode;
 }>) {
 	return (
-		<html lang="pl">
-			<body className={`${inter.variable} min-h-screen overflow-x-hidden`}>
-				<Header />
-				<main className="mx-auto min-h-[calc(100vh_-_88px)] w-full px-4 pt-32 md:max-w-4xl lg:max-w-7xl ">
-					{children}
-				</main>
-				<Footer />
-				{modal}
-				<Analytics />
-				<SpeedInsights />
-			</body>
-		</html>
+		<ClerkProvider>
+			<html lang="pl">
+				<body className={`${inter.variable} min-h-screen overflow-x-hidden`}>
+					<Header />
+					<main className="mx-auto min-h-[calc(100vh_-_88px)] w-full px-4 pt-32 md:max-w-4xl lg:max-w-7xl ">
+						{children}
+					</main>
+					<Footer />
+					{modal}
+					<Analytics />
+					<SpeedInsights />
+				</body>
+			</html>
+		</ClerkProvider>
 	);
 }

@@ -24,6 +24,8 @@ const documents = {
 		types.CartRemoveItemDocument,
 	'query CollectionsGetList {\n  collections {\n    data {\n      name\n      description\n      id\n      slug\n    }\n  }\n}':
 		types.CollectionsGetListDocument,
+	'query OrdersGetByEmail($email: String!) {\n  orders(email: $email) {\n    data {\n      id\n      lines\n      status\n      totalAmount\n      updatedAt\n    }\n  }\n}':
+		types.OrdersGetByEmailDocument,
 	'query ProductGetById($id: ID!) {\n  product(id: $id) {\n    ...ProductListItem\n  }\n}':
 		types.ProductGetByIdDocument,
 	'fragment ProductListItem on Product {\n  id\n  name\n  description\n  categories {\n    name\n  }\n  images {\n    url\n  }\n  price\n}':
@@ -74,6 +76,12 @@ export function graphql(
 export function graphql(
 	source: 'query CollectionsGetList {\n  collections {\n    data {\n      name\n      description\n      id\n      slug\n    }\n  }\n}',
 ): typeof import('./graphql').CollectionsGetListDocument;
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(
+	source: 'query OrdersGetByEmail($email: String!) {\n  orders(email: $email) {\n    data {\n      id\n      lines\n      status\n      totalAmount\n      updatedAt\n    }\n  }\n}',
+): typeof import('./graphql').OrdersGetByEmailDocument;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

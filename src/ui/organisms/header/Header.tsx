@@ -1,3 +1,4 @@
+import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 import { Nav } from '@/molecules/nav/Nav';
 import { type INavItem } from '@/types/types';
 import { Logo } from '@/atoms/logo/Logo';
@@ -21,6 +22,14 @@ export const Header = () => {
 				<Logo />
 				<Nav routes={routes} />
 				<SearchBar />
+				<div>
+					<SignedIn>
+						<UserButton />
+					</SignedIn>
+					<SignedOut>
+						<SignInButton />
+					</SignedOut>
+				</div>
 			</div>
 		</header>
 	);
