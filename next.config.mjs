@@ -36,6 +36,20 @@ const nextConfig = withMDX({
 		typedRoutes: true,
 		mdxRs: true,
 	},
+	redirects() {
+		return [
+			{
+				source: '/products',
+				destination: '/products/1',
+				permanent: false,
+			},
+			{
+				source: '/categories/:category',
+				destination: '/categories/:category/1',
+				permanent: false,
+			},
+		];
+	},
 });
 
 export default nextConfig;

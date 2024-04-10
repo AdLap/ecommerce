@@ -12,7 +12,7 @@ export type CollectionsPageProps = {
 export default async function CollectionPage({
 	params: { collection, pageNumber, productsOnPage },
 }: CollectionsPageProps) {
-	const productsOnPageNumber = Number(productsOnPage) || 2;
+	const productsOnPageNumber = Number(productsOnPage) || 4;
 
 	return (
 		<section>

@@ -12,7 +12,7 @@ export type CategoryProductPageProps = {
 export default async function CategoryProductPage({
 	params: { category, pageNumber, productsOnPage },
 }: CategoryProductPageProps) {
-	const productsOnPageNumber = Number(productsOnPage) || 2;
+	const productsOnPageNumber = Number(productsOnPage) || 4;
 
 	return (
 		<section>

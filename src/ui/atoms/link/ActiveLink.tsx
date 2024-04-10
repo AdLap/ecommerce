@@ -21,7 +21,7 @@ export const ActiveLink = ({
 		? pathname === href
 		: href === '/'
 			? pathname === href
-			: pathname.startsWith(href.slice(0, href.lastIndexOf('/')));
+			: (pathname === '/' && href === '/') || (href !== '/' && pathname.startsWith(href));
 
 	return (
 		<Link

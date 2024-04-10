@@ -9,7 +9,7 @@ export default function ProductsPage({
 	params: { pageNumber, productsOnPage },
 }: ProductsPageProps) {
 	const currentPage = pageNumber;
-	const productsOnPageNumber = Number(productsOnPage) || 2;
+	const productsOnPageNumber = Number(productsOnPage) || 4;
 
 	return (
 		<section>
