@@ -6,7 +6,7 @@ export type ProductListItemDescriptionProps = {
 };
 
 export const ProductListItemDescription = ({
-	product: { name, description, price, categories },
+	product: { name, price, categories },
 }: ProductListItemDescriptionProps) => {
 	return (
 		<article className="relative mt-4 flex flex-col items-center text-neutral-800">
@@ -14,7 +14,6 @@ export const ProductListItemDescription = ({
 				{categories[0]?.name || ''}
 			</span>
 			<h2 className="font-bold">{name}</h2>
-			<p className="self-start">{description}</p>
 			<p className="self-end font-medium">{priceFormatter(price)}</p>
 		</article>
 	);

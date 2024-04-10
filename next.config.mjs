@@ -49,7 +49,7 @@ const nextConfig = withMDX({
 				permanent: false,
 			},
 		];
-	}
+	},
 });
 
 export default nextConfig;

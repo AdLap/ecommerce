@@ -11,7 +11,12 @@ export const AddToCartButton = ({ className, children }: AddToCartButtonProps) =
 	const status = useFormStatus();
 
 	return (
-		<button className={className} type="submit" disabled={status.pending}>
+		<button
+			className={className}
+			type="submit"
+			disabled={status.pending}
+			data-testid="add-to-cart-button"
+		>
 			{children}
 		</button>
 	);

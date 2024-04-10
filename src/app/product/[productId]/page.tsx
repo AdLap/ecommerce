@@ -10,8 +10,8 @@ export type ProductPageProps = {
 	searchParams: Record<string, string | string[]>;
 };
 
-export default async function ProductPage({ params }: ProductPageProps) {
-	const product = await getProductById(params.productId);
+export default async function ProductPage({ params: { productId } }: ProductPageProps) {
+	const product = await getProductById(productId);
 
 	if (!product) return notFound();
 

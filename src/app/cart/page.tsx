@@ -1,6 +1,5 @@
 import { redirect } from 'next/navigation';
 import { cookies } from 'next/headers';
-import Link from 'next/link';
 import { executeGraphQL } from '@/api/qraphqlApi';
 import { CartGetByIdDocument } from '@/gql/graphql';
 import { priceFormatter } from '@/utils/price-formatter';
@@ -17,7 +16,6 @@ export default async function CartPage() {
 
 	return (
 		<div>
-			<Link href="/cart/details">Cart details</Link>
 			<h1>Order #{cart.id} summary</h1>
 			<table>
 				<thead>

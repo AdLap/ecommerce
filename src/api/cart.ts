@@ -42,7 +42,7 @@ export const createCart = async () => {
 	});
 
 	return newCart;
-}
+};
 
 export const getCartFromCookies = async () => {
 	const cartId = cookies().get('cartId')?.value;
