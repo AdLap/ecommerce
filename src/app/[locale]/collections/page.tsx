@@ -1,5 +1,5 @@
-import Link from 'next/link';
 import { Suspense } from 'react';
+import { Link } from '@/navigation';
 import { getCollectionsList } from '@/api/collections';
 
 export default async function CollectionsPage() {

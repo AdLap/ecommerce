@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from '@/navigation';
 import { ProductListItemDescription } from '@/atoms/product/list/ProductListItemDescription';
 import { ProductListItemImage } from '@/atoms/product/list/ProductListItemImage';
 import { type ProductListItemFragment } from '@/gql/graphql';

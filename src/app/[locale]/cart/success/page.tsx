@@ -1,5 +1,5 @@
-import { redirect } from 'next/navigation';
 import Stripe from 'stripe';
+import { redirect } from '@/navigation';
 
 export type CartSuccessPageProps = {
 	searchParams: {
@@ -10,7 +10,7 @@ export type CartSuccessPageProps = {
 export default async function CartSuccessPage({
 	searchParams: { sessionId },
 }: CartSuccessPageProps) {
-	if (!sessionId) redirect('/');
+	if (!sessionId) return redirect('/');
 	if (!process.env.STRIPE_SECRET_KEY) throw new Error('STRIPE_SECRET_KEY not set');
 
 	const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {

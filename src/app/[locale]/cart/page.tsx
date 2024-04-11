@@ -1,5 +1,5 @@
-import { redirect } from 'next/navigation';
 import { cookies } from 'next/headers';
+import { redirect } from '@/navigation';
 import { executeGraphQL } from '@/api/qraphqlApi';
 import { CartGetByIdDocument } from '@/gql/graphql';
 import { priceFormatter } from '@/utils/price-formatter';
@@ -9,10 +9,10 @@ import { handlePaymentAction } from '@/actions/payment-actions';
 
 export default async function CartPage() {
 	const cartId = cookies().get('cartId')?.value;
-	if (!cartId) redirect('/');
+	if (!cartId) return redirect('/');
 
 	const { cart } = await executeGraphQL({ query: CartGetByIdDocument, variables: { id: cartId } });
-	if (!cart) redirect('/');
+	if (!cart) return redirect('/');
 
 	return (
 		<div>

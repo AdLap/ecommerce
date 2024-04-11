@@ -1,7 +1,7 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
 import { useTransition } from 'react';
+import { useRouter } from '@/navigation';
 import { removeItem } from '@/actions/cart-actions';
 
 export type RemoveButtonProps = {

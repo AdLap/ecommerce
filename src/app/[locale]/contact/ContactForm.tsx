@@ -2,9 +2,9 @@
 
 import { useRef } from 'react';
 import { useFormStatus } from 'react-dom';
-import { contactAction } from '@/app/contact/contactActions';
-import { useTypeSafeFormState } from '@/app/contact/useTypeSafeForm';
-import { contactSchema } from '@/app/contact/contactForm.schema';
+import { contactAction } from './contactActions';
+import { useTypeSafeFormState } from './useTypeSafeForm';
+import { contactSchema } from './contactForm.schema';
 
 export const ContactForm = () => {
 	const formRef = useRef<HTMLFormElement | null>(null);

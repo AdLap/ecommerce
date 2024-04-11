@@ -1,6 +1,6 @@
 'use client';
 
-import { useRouter } from 'next/navigation';
+import { useRouter } from '@/navigation';
 
 export function Overlay() {
 	const router = useRouter();

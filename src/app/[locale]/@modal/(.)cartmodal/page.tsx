@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link } from '@/navigation';
 import { Overlay } from '@/ui/atoms/overlay/Overlay';
 import { getCartFromCookies } from '@/api/cart';
 

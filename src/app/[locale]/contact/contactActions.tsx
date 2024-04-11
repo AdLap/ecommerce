@@ -1,6 +1,6 @@
 'use server';
 
-import { contactSchema, type ContactFormData } from '@/app/contact/contactForm.schema';
+import { contactSchema, type ContactFormData } from './contactForm.schema';
 
 export const contactAction = async (data: ContactFormData) => {
 	await new Promise((resolve) => setTimeout(resolve, 1000));

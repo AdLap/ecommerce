@@ -1,6 +1,6 @@
 'use client';
-import { useRouter } from 'next/navigation';
 import { useCallback, useEffect, useState } from 'react';
+import { useRouter } from '@/navigation';
 
 export const SearchBar = () => {
 	const [searchValue, setSearchValue] = useState('');

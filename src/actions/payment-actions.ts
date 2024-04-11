@@ -1,7 +1,7 @@
 'use server';
 import { cookies } from 'next/headers';
-import { redirect } from 'next/navigation';
 import Stripe from 'stripe';
+import { redirect } from '@/navigation';
 import { getCartFromCookies } from '@/api/cart';
 
 export const handlePaymentAction = async () => {

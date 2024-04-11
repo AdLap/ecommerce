@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import Link from 'next/link';
+import { Link } from '@/navigation';
 import { searchProducts } from '@/api/products';
 
 export type SearchPageProps = {

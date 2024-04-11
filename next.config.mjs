@@ -1,4 +1,5 @@
 import nextMdx from '@next/mdx';
+import createNextIntlPlugin from 'next-intl/plugin';
 
 /** @type {import('next').NextConfig} */
 const withMDX = nextMdx({
@@ -8,6 +9,7 @@ const withMDX = nextMdx({
 		// rehypePlugins: [],
 	},
 });
+const withNextIntl = createNextIntlPlugin();
 
 const nextConfig = withMDX({
 	pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
@@ -53,4 +55,4 @@ const nextConfig = withMDX({
 	},
 });
 
-export default nextConfig;
+export default withNextIntl(nextConfig);

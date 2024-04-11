@@ -5,7 +5,7 @@ import { Inter } from 'next/font/google';
 import type { Metadata } from 'next';
 import { Header } from '@/organisms/header/Header';
 import { Footer } from '@/ui/organisms/footer/Footer';
-import './globals.css';
+import '../globals.css';
 
 const inter = Inter({
 	subsets: ['latin', 'latin-ext'],
@@ -21,9 +21,11 @@ export const metadata: Metadata = {
 export default function RootLayout({
 	children,
 	modal,
+	// params: { locale },
 }: Readonly<{
 	children: React.ReactNode;
 	modal: React.ReactNode;
+	// params: { locale: string };
 }>) {
 	return (
 		<ClerkProvider>
