@@ -1,7 +1,7 @@
 'use client';
 
 import { useRef } from 'react';
-import { useFormState, useFormStatus } from 'react-dom';
+import { useFormStatus } from 'react-dom';
 import { contactAction } from '@/app/contact/contactActions';
 import { useTypeSafeFormState } from '@/app/contact/useTypeSafeForm';
 import { contactSchema } from '@/app/contact/contactForm.schema';
