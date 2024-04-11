@@ -11,6 +11,7 @@ const withMDX = nextMdx({
 
 const nextConfig = withMDX({
 	pageExtensions: ['ts', 'tsx', 'md', 'mdx'],
+	// output: 'standalone',
 	images: {
 		remotePatterns: [
 			{

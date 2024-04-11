@@ -13,6 +13,7 @@ export default authMiddleware({
 		'/product/(.*)',
 		'/products',
 		'/products(.*)',
+		'/contact',
 	],
 });
 
